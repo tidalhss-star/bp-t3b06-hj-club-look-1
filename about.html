@@ -1,342 +1,340 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>합정 클럽 룩북 – 정보 | 거리 감성 그대로</title>
-    <meta name="description" content="합정 클럽 룩북 정보 – 위치, 운영 시간, 연락처. 진짜 클럽 문화를 원한다면 여기. 전화 010-6279-0862. Brutalist RAW 에디션.">
-    <meta name="keywords" content="합정 클럽, 합정 클럽 룩북, 합정 클럽 정보, 합정 클럽 위치, brutalism club, street wear club, 합정 핫플">
-    <meta name="bpaas-design-system" content="brutalist-avantgarde">
-    <meta name="bpaas-design-theme" content="kr-raw-concrete">
-    <link rel="canonical" href="https://hapjeong-club-zone.program-school.online/about.html">
-    <!-- OG / Twitter -->
-    <meta property="og:title" content="합정 클럽 룩북 – 정보 | 거리 감성 그대로">
-    <meta property="og:description" content="합정 클럽 룩북 정보 – 위치, 운영 시간, 연락처. 진짜 클럽 문화를 원한다면 여기. 전화 010-6279-0862. Brutalist RAW 에디션.">
-    <meta property="og:image" content="https://t3b06-hj-club-look-1.vercel.app/og-image.jpg">
-    <meta property="og:url" content="https://hapjeong-club-zone.program-school.online/about.html">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="합정 클럽 룩북 – 정보">
-    <meta name="twitter:description" content="거리 감성 그대로, 합정 클럽 정보">
-    <meta name="twitter:image" content="https://t3b06-hj-club-look-1.vercel.app/og-image.jpg">
-    <style>
-        /* RESET minimal brutal */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-            background: #1a1a1a;
-            color: #e0e0e0;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        /* FULL BLEED */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        /* TYPOGRAPHY */
-        h1, h2, h3 {
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        h1 {
-            font-size: 3rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            color: #f5f5f5;
-        }
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            border-bottom: 3px solid #ff3b3b;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-        h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #ff6b6b;
-        }
-        p, li, blockquote, .review-text {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #c0c0c0;
-        }
-        a {
-            color: #ff3b3b;
-            text-decoration: underline;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        a:hover {
-            color: #ffffff;
-            text-decoration: none;
-        }
-        /* LAYOUT */
-        .section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #333;
-        }
-        .section:last-of-type {
-            border-bottom: none;
-        }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-        .card {
-            background: #2a2a2a;
-            padding: 2rem;
-            border-left: 4px solid #ff3b3b;
-            margin-bottom: 1.5rem;
-        }
-        .card h3 {
-            margin-top: 0;
-        }
-        .btn {
-            display: inline-block;
-            background: #ff3b3b;
-            color: #1a1a1a;
-            padding: 0.75rem 2rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            text-decoration: none;
-            letter-spacing: 1px;
-            transition: background 0.2s, color 0.2s;
-        }
-        .btn:hover {
-            background: #ffffff;
-            color: #1a1a1a;
-        }
-        .highlight {
-            color: #ff3b3b;
-            font-weight: 800;
-        }
-        .small {
-            font-size: 0.9rem;
-            color: #888;
-        }
-        /* NAV */
-        nav {
-            background: #1a1a1a;
-            padding: 1rem 0;
-            border-bottom: 2px solid #ff3b3b;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            color: #f5f5f5;
-            text-decoration: none;
-        }
-        nav .logo span {
-            color: #ff3b3b;
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: 600;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-        }
-        nav a:hover {
-            color: #ff3b3b;
-        }
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #e0e0e0;
-            margin: 4px 0;
-        }
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            .grid-2 { grid-template-columns: 1fr; }
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: #1a1a1a;
-                padding: 1rem;
-                border-bottom: 2px solid #ff3b3b;
-            }
-            nav ul.active {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-            }
-        }
-        /* FOOTER */
-        footer {
-            background: #111;
-            padding: 2rem 0;
-            text-align: center;
-            border-top: 2px solid #ff3b3b;
-        }
-        footer p {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
-        }
-        .tel-link {
-            color: #ff3b3b;
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
-        /* FAQ */
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-        .faq-item h4 {
-            font-weight: 700;
-            color: #f5f5f5;
-            margin-bottom: 0.5rem;
-            cursor: pointer;
-        }
-        .faq-item p {
-            margin-left: 1rem;
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>합정 클럽 룩북 – 정보 | 거리 감성 그대로</title>
+ <meta name="description" content="합정 클럽 룩북 정보 – 위치, 운영 시간, 연락처. 진짜 클럽 문화를 원한다면 여기. Brutalist RAW 에디션.">
+ <meta name="keywords" content="합정 클럽, 합정 클럽 룩북, 합정 클럽 정보, 합정 클럽 위치, brutalism club, street wear club, 합정 핫플">
+ <link rel="canonical" href="https://hapjeong-club-zone.program-school.online/about.html">
+ <!-- OG / Twitter -->
+ <meta property="og:title" content="합정 클럽 룩북 – 정보 | 거리 감성 그대로">
+ <meta property="og:description" content="합정 클럽 룩북 정보 – 위치, 운영 시간, 연락처. 진짜 클럽 문화를 원한다면 여기. Brutalist RAW 에디션.">
+ <meta property="og:image" content="https://t3b06-hj-club-look-1.vercel.app/og-image.jpg">
+ <meta property="og:url" content="https://hapjeong-club-zone.program-school.online/about.html">
+ <meta name="twitter:card" content="summary">
+ <meta name="twitter:title" content="합정 클럽 룩북 – 정보">
+ <meta name="twitter:description" content="거리 감성 그대로, 합정 클럽 정보">
+ <meta name="twitter:image" content="https://t3b06-hj-club-look-1.vercel.app/og-image.jpg">
+ <style>
+ /* RESET minimal brutal */
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ scroll-behavior: smooth;
+ }
+ body {
+ font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+ background: #1a1a1a;
+ color: #e0e0e0;
+ line-height: 1.6;
+ -webkit-font-smoothing: antialiased;
+ }
+ /* FULL BLEED */
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 20px;
+ }
+ /* TYPOGRAPHY */
+ h1, h2, h3 {
+ font-weight: 800;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ }
+ h1 {
+ font-size: 3rem;
+ line-height: 1.1;
+ margin-bottom: 1rem;
+ color: #f5f5f5;
+ }
+ h2 {
+ font-size: 2rem;
+ margin-bottom: 1.5rem;
+ border-bottom: 3px solid #ff3b3b;
+ padding-bottom: 0.5rem;
+ display: inline-block;
+ }
+ h3 {
+ font-size: 1.3rem;
+ margin-bottom: 1rem;
+ color: #ff6b6b;
+ }
+ p, li, blockquote, .review-text {
+ font-size: 1.1rem;
+ margin-bottom: 1rem;
+ color: #c0c0c0;
+ }
+ a {
+ color: #ff3b3b;
+ text-decoration: underline;
+ font-weight: 600;
+ transition: color 0.2s;
+ }
+ a:hover {
+ color: #ffffff;
+ text-decoration: none;
+ }
+ /* LAYOUT */
+ .section {
+ padding: 4rem 0;
+ border-bottom: 1px solid #333;
+ }
+ .section:last-of-type {
+ border-bottom: none;
+ }
+ .grid-2 {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 2rem;
+ }
+ .card {
+ background: #2a2a2a;
+ padding: 2rem;
+ border-left: 4px solid #ff3b3b;
+ margin-bottom: 1.5rem;
+ }
+ .card h3 {
+ margin-top: 0;
+ }
+ .btn {
+ display: inline-block;
+ background: #ff3b3b;
+ color: #1a1a1a;
+ padding: 0.75rem 2rem;
+ font-weight: 800;
+ text-transform: uppercase;
+ text-decoration: none;
+ letter-spacing: 1px;
+ transition: background 0.2s, color 0.2s;
+ }
+ .btn:hover {
+ background: #ffffff;
+ color: #1a1a1a;
+ }
+ .highlight {
+ color: #ff3b3b;
+ font-weight: 800;
+ }
+ .small {
+ font-size: 0.9rem;
+ color: #888;
+ }
+ /* NAV */
+ nav {
+ background: #1a1a1a;
+ padding: 1rem 0;
+ border-bottom: 2px solid #ff3b3b;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ }
+ nav .container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ nav .logo {
+ font-size: 1.5rem;
+ font-weight: 900;
+ text-transform: uppercase;
+ color: #f5f5f5;
+ text-decoration: none;
+ }
+ nav .logo span {
+ color: #ff3b3b;
+ }
+ nav ul {
+ list-style: none;
+ display: flex;
+ gap: 2rem;
+ }
+ nav a {
+ color: #e0e0e0;
+ text-decoration: none;
+ font-weight: 600;
+ text-transform: uppercase;
+ font-size: 0.9rem;
+ letter-spacing: 1px;
+ }
+ nav a:hover {
+ color: #ff3b3b;
+ }
+ .hamburger {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ }
+ .hamburger span {
+ width: 25px;
+ height: 3px;
+ background: #e0e0e0;
+ margin: 4px 0;
+ }
+ /* RESPONSIVE */
+ @media (max-width: 768px) {
+ h1 { font-size: 2rem; }
+ h2 { font-size: 1.5rem; }
+ .grid-2 { grid-template-columns: 1fr; }
+ nav ul {
+ display: none;
+ flex-direction: column;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ width: 100%;
+ background: #1a1a1a;
+ padding: 1rem;
+ border-bottom: 2px solid #ff3b3b;
+ }
+ nav ul.active {
+ display: flex;
+ }
+ .hamburger {
+ display: flex;
+ }
+ }
+ /* FOOTER */
+ footer {
+ background: #111;
+ padding: 2rem 0;
+ text-align: center;
+ border-top: 2px solid #ff3b3b;
+ }
+ footer p {
+ margin-bottom: 0.5rem;
+ font-size: 0.9rem;
+ }
+ .tel-link {
+ color: #ff3b3b;
+ font-weight: 800;
+ font-size: 1.2rem;
+ }
+ /* FAQ */
+ .faq-item {
+ margin-bottom: 1.5rem;
+ }
+ .faq-item h4 {
+ font-weight: 700;
+ color: #f5f5f5;
+ margin-bottom: 0.5rem;
+ cursor: pointer;
+ }
+ .faq-item p {
+ margin-left: 1rem;
+ }
+ </style>
   <meta property="og:type" content="website">
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <a href="/" class="logo">합정<span>클럽</span>룩북</a>
-            <ul>
-                <li><a href="/">홈</a></li>
-                <li><a href="/lookbook">룩북</a></li>
-                <li><a href="/info">정보</a></li>
-                <li><a href="/contact">문의</a></li>
-            </ul>
-            <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+ <nav>
+ <div class="container">
+ <a href="/" class="logo">합정<span>클럽</span>룩북</a>
+ <ul>
+ <li><a href="/">홈</a></li>
+ <li><a href="/lookbook">룩북</a></li>
+ <li><a href="/info">정보</a></li>
+ <li><a href="/contact">문의</a></li>
+ </ul>
+ <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('active')">
+ 
+ 
+ 
+ </div>
+ </div>
+ </nav>
 
-    <main>
-        <section class="section">
-            <div class="container">
-                <h1>정보</h1>
-                <p class="review-text">합정에서 가장 거친 클럽 문화를 원한다면, 여기야. 우리는 가짜 힙합, 가짜 스트릿을 거부해. <span class="highlight">진짜만 남았다.</span> 아래 정보를 확인하고 오든가 말든가. 선택은 니 몫.</p>
-            </div>
-        </section>
+ <main>
+ <section class="section">
+ <div class="container">
+ <h1>정보</h1>
+ <p class="review-text">합정에서 가장 거친 클럽 문화를 원한다면, 여기야. 우리는 가짜 힙합, 가짜 스트릿을 거부해. <span class="highlight">진짜만 남았다.</span> 아래 정보를 확인하고 오든가 말든가. 선택은 니 몫.</p>
+ </div>
+ </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>📍 위치</h2>
-                <div class="grid-2">
-                    <div>
-                        <p>서울 마포구 합정동 123-45<br>지하 1층, 빨간 철문이 보일 거야.</p>
-                        <p>합정역 2번 출구에서 도보 3분. 길 잃어도 전화해. 우리는 기다리지 않아.</p>
-                        <a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a>
-                    </div>
-                    <div class="card">
-                        <h3>🚇 오시는 길</h3>
-                        <p>버스: 271, 7016, 7737 → 합정동 주민센터 하차<br>지하철: 2호선/6호선 합정역 2번 출구<br>주차: 불가능. 대중교통 타고 와. 불편하면 오지 마.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+ <section class="section">
+ <div class="container">
+ <h2>📍 위치</h2>
+ <div class="grid-2">
+ <div>
+ <p>서울 마포구 합정동 123-45<br>지하 1층, 빨간 철문이 보일 거야.</p>
+ <p>합정역 2번 출구에서 도보 3분. 길 잃어도 전화해. 우리는 기다리지 않아.</p>
+ 
+ </div>
+ <div class="card">
+ <h3>🚇 오시는 길</h3>
+ <p>버스: 271, 7016, 7737 → 합정동 주민센터 하차<br>지하철: 2호선/6호선 합정역 2번 출구<br>주차: 불가능. 대중교통 타고 와. 불편하면 오지 마.</p>
+ </div>
+ </div>
+ </div>
+ </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>⏰ 운영 시간</h2>
-                <div class="card">
-                    <p><span class="highlight">매일</span> 22:00 ~ 익일 06:00</p>
-                    <p>금요일, 토요일은 새벽까지 늘어날 수도 있어. 우리는 규칙에 갇히지 않아.</p>
-                    <p class="small">* 마감 시간은 현장 상황에 따라 변경될 수 있음. 불만 있으면 직접 얘기해.</p>
-                </div>
-            </div>
-        </section>
+ <section class="section">
+ <div class="container">
+ <h2>⏰ 운영 시간</h2>
+ <div class="card">
+ <p><span class="highlight">매일</span> 22:00 ~ 익일 06:00</p>
+ <p>금요일, 토요일은 새벽까지 늘어날 수도 있어. 우리는 규칙에 갇히지 않아.</p>
+ <p class="small">* 마감 시간은 현장 상황에 따라 변경될 수 있음. 불만 있으면 직접 얘기해.</p>
+ </div>
+ </div>
+ </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>📞 연락처</h2>
-                <p>전화: <a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a></p>
-                <p>이메일: club@hjc-lookbook.kr (답장은 느려. 전화가 더 빨라.)</p>
-                <p>인스타그램: <a href="#">@hj_club_raw</a> (DM은 거의 안 봄. 그래도 보내 봐.)</p>
-            </div>
-        </section>
+ <section class="section">
+ <div class="container">
+ <h2>📞 연락처</h2>
+ <p>전화: </p>
+ <p>전화가 더 빨라.)</p>
+ <p>인스타그램: <a href="#">@hj_club_raw</a> (DM은 거의 안 봄. 그래도 보내 봐.)</p>
+ </div>
+ </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>❓ 자주 묻는 거</h2>
-                <div class="faq-item">
-                    <h4>드레스 코드 있나요?</h4>
-                    <p>거리 감성. 정장, 슬리퍼, 쫄쫄이는 거절. 우리는 얼굴보다 무드를 본다.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>입장료는 얼마에요?</h4>
-                    <p>2만원. 현금만 가능. 카드는 안 받아. ATM은 근처 편의점에 있어.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>사진 촬영 가능한가요?</h4>
-                    <p>가능. 하지만 플래시는 no. 분위기 깨면 바로 퇴장이야.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>단체 예약 되나요?</h4>
-                    <p>10인 이상은 전화해. 우리가 거를 수도 있다. 그게 규칙이다.</p>
-                </div>
-            </div>
-        </section>
+ <section class="section">
+ <div class="container">
+ <h2>❓ 자주 묻는 거</h2>
+ <div class="faq-item">
+ <h4>드레스 코드 있나요?</h4>
+ <p>거리 감성. 정장, 슬리퍼, 쫄쫄이는 거절. 우리는 얼굴보다 무드를 본다.</p>
+ </div>
+ <div class="faq-item">
+ <h4>입장료는 얼마에요?</h4>
+ <p>2만원. 현금만 가능. 카드는 안 받아. ATM은 근처 편의점에 있어.</p>
+ </div>
+ <div class="faq-item">
+ <h4>사진 촬영 가능한가요?</h4>
+ <p>가능. 하지만 플래시는 no. 분위기 깨면 바로 퇴장이야.</p>
+ </div>
+ <div class="faq-item">
+ <h4>단체 예약 되나요?</h4>
+ <p>10인 이상은 전화해. 우리가 거를 수도 있다. 그게 규칙이다.</p>
+ </div>
+ </div>
+ </section>
 
-        <section class="section">
-            <div class="container">
-                <h2>⚠️ 주의사항</h2>
-                <p>이곳은 합정의 진짜 거리 문화를 체험하는 공간이야. 예의 없으면 나가. 싸움 금지. 분위기 깨는 행위는 제재한다. 우리는 모두를 위한 클럽이 아니다. <span class="highlight">너를 위한 클럽</span>이다.</p>
-            </div>
-        </section>
-    </main>
+ <section class="section">
+ <div class="container">
+ <h2>⚠️ 주의사항</h2>
+ <p>이곳은 합정의 진짜 거리 문화를 체험하는 공간이야. 예의 없으면 나가. 싸움 금지. 분위기 깨는 행위는 제재한다. 우리는 모두를 위한 클럽이 아니다. <span class="highlight">너를 위한 클럽</span>이다.</p>
+ </div>
+ </section>
+ </main>
 
-    <footer>
-        <div class="container">
-            <p>합정 클럽 룩북 – 거리 감성 그대로</p>
-            <p>전화: <a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a></p>
-            <p class="small">© 2025 합정클럽룩북. All rights reserved. 무단 도용, 복제 금지. 걸리면 가만 안 둬.</p>
-        </div>
-    </footer>
+ <footer>
+ <div class="container">
+ <p>합정 클럽 룩북 – 거리 감성 그대로</p>
+ <p>전화: </p>
+ <p class="small">© 2025 합정클럽룩북. All rights reserved. 무단 도용, 복제 금지. 걸리면 가만 안 둬.</p>
+ </div>
+ </footer>
 
-    <script>
-        // 모바일 햄버거 메뉴 토글 (간단)
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('nav ul').classList.toggle('active');
-        });
-    </script>
+ <script>
+ // 모바일 햄버거 메뉴 토글 (간단)
+ document.querySelector('.hamburger').addEventListener('click', function() {
+ document.querySelector('nav ul').classList.toggle('active');
+ });
+ </script>
 </body>
 </html>
