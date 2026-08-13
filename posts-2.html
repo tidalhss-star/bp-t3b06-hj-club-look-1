@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · t3b06-hj-club-look-1</title>
+  <meta name="description" content="t3b06-hj-club-look-1에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://hapjeong-club-zone.program-school.online/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* RESET minimal brutal */
+ * { margin: 0; padding: 0; box-sizing: border-box; }
+
+ html { scroll-behavior: smooth; }
+
+ body {
+ background: #1a1a1a;
+ color: #e5e5e5;
+ font-family: 'Impact', 'Arial Black', system-ui, sans-serif;
+ font-weight: 400;
+ line-height: 1.3;
+ letter-spacing: 0.02em;
+ -webkit-font-smoothing: antialiased;
+ }
+
+ /* FULL BLEED */
+ .container {
+ max-width: none;
+ padding: 0 48px;
+ margin: 0 auto;
+ }
+
+ /* TYPOGRAPHY */
+ h1, h2, h3 { text-transform: uppercase; font-weight: 800; }
+ h1 { font-size: clamp(3.2rem, 12vw, 6rem); line-height: 0.9; letter-spacing: -0.02em; color: #ff6b35; }
+ h2 { font-size: clamp(2.4rem, 6vw, 3.6rem); line-height: 1.0; border-left: 6px solid #ff6b35; padding-left: 0.4em; margin-bottom: 0.6em; }
+ h3 { font-size: 1.8rem; }
+
+ p, li, blockquote, .review-text { font-family: 'Courier New', 'Courier', monospace; font-size: 1.1rem; line-height: 1.5; }
+
+ a { color: inherit; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 2px; }
+ a:hover { color: #ff6b35; }
+
+ /* LAYOUT */
+ .section {
+ padding: 80px 0;
+ border-bottom: 4px solid #ff6b35;
+ }
+
+ .section:last-of-type { border-bottom: none; }
+
+ .grid-2 {
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ gap: 32px;
+ }
+
+ /* HEADER + NAV */
+ header {
+ background: #1a1a1a;
+ padding: 48px 0 24px;
+ border-bottom: 4px solid #e5e5e5;
+ position: relative;
+ }
+
+ .header-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+
+ .logo {
+ font-size: 2.4rem;
+ letter-spacing: -0.04em;
+ transform: rotate(-1deg);
+ display: inline-block;
+ color: #ff6b35;
+ }
+
+ .logo span { color: #e5e5e5; }
+
+ nav ul {
+ display: flex;
+ gap: 32px;
+ list-style: none;
+ }
+
+ nav a {
+ font-size: 1.1rem;
+ font-weight: 800;
+ text-transform: uppercase;
+ padding: 8px 16px;
+ border: 3px solid #e5e5e5;
+ background: transparent;
+ transition: 0.15s;
+ display: inline-block;
+ }
+
+ nav a:hover {
+ background: #ff6b35;
+ color: #1a1a1a;
+ border-color: #ff6b35;
+ transform: scale(1.05);
+ }
+
+ /* HAMBURGER */
+ .hamburger { display: none; }
+
+ #nav-toggle { display: none; }
+
+ /* HERO */
+ .hero {
+ padding: 80px 0 100px;
+ position: relative;
+ overflow: hidden;
+ background: 
+ repeating-linear-gradient(45deg, #ff6b35 0px, #ff6b35 4px, transparent 4px, transparent 12px),
+ #1a1a1a;
+ background-blend-mode: overlay;
+ border-bottom: 4px solid #ff6b35;
+ }
+
+ .hero::before {
+ content: '';
+ position: absolute;
+ top: -40px; left: -40px;
+ width: 200px; height: 200px;
+ background: #e5e5e5;
+ transform: rotate(12deg);
+ opacity: 0.1;
+ }
+
+ .hero-box {
+ border: 4px solid #ff6b35;
+ padding: 48px;
+ background: rgba(26,26,26,0.9);
+ position: relative;
+ z-index: 2;
+ transform: rotate(-0.5deg);
+ }
+
+ .hero-box h1 {
+ font-size: clamp(3.6rem, 12vw, 6.4rem);
+ margin-bottom: 0.3em;
+ }
+
+ .hero-box p {
+ font-family: 'Impact', sans-serif;
+ font-size: 1.6rem;
+ letter-spacing: 0.1em;
+ color: #e5e5e5;
+ text-transform: uppercase;
+ }
+
+ .hero-cta {
+ display: inline-block;
+ margin-top: 32px;
+ background: #ff6b35;
+ color: #1a1a1a;
+ padding: 16px 48px;
+ font-size: 1.4rem;
+ font-weight: 800;
+ border: 4px solid #e5e5e5;
+ text-decoration: none;
+ text-transform: uppercase;
+ transform: rotate(1deg);
+ transition: 0.2s;
+ }
+
+ .hero-cta:hover {
+ background: #e5e5e5;
+ border-color: #ff6b35;
+ transform: rotate(-1deg) scale(1.03);
+ }
+
+ /* ABOUT */
+ .about-text {
+ font-size: 1.2rem;
+ border: 3px solid #ff6b35;
+ padding: 32px;
+ background: rgba(255,107,53,0.05);
+ }
+
+ .about-list {
+ list-style: none;
+ margin-top: 24px;
+ }
+
+ .about-list li {
+ padding: 12px 0;
+ border-bottom: 2px solid #ff6b35;
+ font-weight: 800;
+ text-transform: uppercase;
+ }
+
+ .about-list li::before {
+ content: '▸ ';
+ color: #ff6b35;
+ }
+
+ /* REVIEWS */
+ .review-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+ gap: 32px;
+ }
+
+ .review-card {
+ border: 4px solid #e5e5e5;
+ padding: 32px;
+ background: #1a1a1a;
+ transform: rotate(0deg);
+ transition: 0.2s;
+ position: relative;
+ }
+
+ .review-card:nth-child(odd) { transform: rotate(0.5deg); }
+ .review-card:nth-child(even) { transform: rotate(-0.5deg); }
+
+ .review-card:hover {
+ border-color: #ff6b35;
+ transform: scale(1.02) rotate(0deg);
+ }
+
+ .review-meta {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ margin-top: 16px;
+ font-size: 0.9rem;
+ border-top: 2px solid #333;
+ padding-top: 12px;
+ }
+
+ .review-meta strong { color: #ff6b35; }
+
+ .stars { color: #ff6b35; font-size: 1.2rem; letter-spacing: 0.1em; }
+
+ /* FOOTER */
+ footer {
+ padding: 48px 0;
+ border-top: 4px solid #e5e5e5;
+ background: #111;
+ }
+
+ .footer-inner {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-wrap: wrap;
+ gap: 24px;
+ }
+
+ .footer-phone {
+ font-size: 1.6rem;
+ font-weight: 800;
+ background: #ff6b35;
+ color: #1a1a1a;
+ padding: 8px 24px;
+ text-decoration: none;
+ border: 3px solid #e5e5e5;
+ transform: rotate(-0.5deg);
+ }
+
+ .footer-phone:hover {
+ background: #e5e5e5;
+ border-color: #ff6b35;
+ }
+
+ .copyright {
+ font-family: 'Courier New', monospace;
+ font-size: 0.9rem;
+ opacity: 0.7;
+ }
+
+ /* RAW TEXTURE OVERLAY */
+ body::after {
+ content: '';
+ position: fixed;
+ top: 0; left: 0;
+ width: 100%; height: 100%;
+ pointer-events: none;
+ background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4'><rect width='4' height='4' fill='none'/><path d='M1 1h2v2H1z' fill='%23ffffff' opacity='0.03'/></svg>");
+ z-index: 9999;
+ }
+
+ /* RESPONSIVE */
+ @media (max-width: 768px) {
+ .container {
+ padding: 0 24px;
+ }
+
+ .section {
+ padding: 48px 0;
+ }
+
+ .grid-2 {
+ grid-template-columns: 1fr;
+ }
+
+ /* HAMBURGER */
+ .hamburger {
+ display: flex;
+ flex-direction: column;
+ gap: 8px;
+ cursor: pointer;
+ padding: 8px;
+ border: 2px solid #e5e5e5;
+ background: transparent;
+ }
+
+ .hamburger span {
+ display: block;
+ width: 30px;
+ height: 4px;
+ background: #e5e5e5;
+ }
+
+ nav ul {
+ display: none;
+ flex-direction: column;
+ gap: 12px;
+ padding: 24px 0;
+ width: 100%;
+ }
+
+ #nav-toggle:checked + .hamburger + nav ul {
+ display: flex;
+ }
+
+ #nav-toggle {
+ position: absolute;
+ left: -9999px;
+ }
+
+ header .header-inner {
+ flex-wrap: wrap;
+ }
+
+ .hero-box {
+ padding: 24px;
+ }
+
+ .hero-box h1 {
+ font-size: 2.8rem;
+ }
+
+ .hero-box p {
+ font-size: 1.2rem;
+ }
+
+ .hero-cta {
+ padding: 12px 32px;
+ font-size: 1.2rem;
+ }
+
+ .review-grid {
+ grid-template-columns: 1fr;
+ }
+
+ .footer-inner {
+ flex-direction: column;
+ text-align: center;
+ }
+ }
+
+ /* EXTRA BRUTAL */
+ .b-border { border: 3px solid #ff6b35; }
+ .b-rotate { transform: rotate(1deg); }
+ .skew-left { transform: skewX(-3deg); }
+ .skew-right { transform: skewX(3deg); }
+ .bg-noise { background-image: repeating-linear-gradient(45deg, rgba(255,107,53,0.1) 0px, rgba(255,107,53,0.1) 2px, transparent 2px, transparent 8px); }
+
+ .section-title {
+ display: inline-block;
+ background: #ff6b35;
+ color: #1a1a1a;
+ padding: 8px 32px;
+ margin-bottom: 32px;
+ border: 4px solid #e5e5e5;
+ transform: rotate(-0.5deg);
+ }
+
+ .highlight { color: #ff6b35; font-weight: 800; }
+
+ .phone-link {
+ color: #e5e5e5;
+ text-decoration: none;
+ border-bottom: 3px solid #ff6b35;
+ font-weight: 800;
+ }
+
+ .phone-link:hover { color: #ff6b35; }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · t3b06-hj-club-look-1">
+  <meta property="og:description" content="t3b06-hj-club-look-1에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://hapjeong-club-zone.program-school.online/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <div class="container">
+ <div class="header-inner">
+ <div class="logo"><span>합정</span>클럽<br>룩북</div>
+ <input type="checkbox" id="nav-toggle">
+ <label for="nav-toggle" class="hamburger">
+ 
+ 
+ 
+ </label>
+ <nav>
+ <ul>
+ <li><a href="#home">홈</a></li>
+ <li><a href="#about">ABOUT</a></li>
+ <li><a href="#reviews">리뷰</a></li>
+ 
+ </ul>
+ </nav>
+ </div>
+ </div>
+</header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 39개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0419.html">합정 클럽 룩북 컨셉에 어울리는 홍대 노래방 추천정보 및 인원 구성</a>
+        <p class="post-item__summary">완벽한 합정 클럽 룩북 스타일을 갖추고 나면 그에 걸맞은 훌륭한 장소를 찾는 것이 다음 과제입니다. 접근성, 음향 수준, 그리고 인원 수용의 유연함까지 갖춘 곳을 선별해야 합니다. 홍대는 이러한 조</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0420.html">합정 클럽 룩북 패션과 함께 즐기는 공덕 셔츠룸 추천정보 비교 기준</a>
+        <p class="post-item__summary">합정 클럽 룩북 스타일을 입고 밤의 중심가로 향할 때, 왜 사람들은 셔츠룸을 하나의 대안으로 고민하게 될까요? 단순히 음악과 춤을 넘어 더 프라이빗하고 밀도 높은 서비스를 원하기 때문일 것입니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0421.html">합정 클럽 룩북 활용한 연남 유흥 추천정보 확인법</a>
+        <p class="post-item__summary">많은 이들이 합정 클럽 룩북을 참고하여 밤 문화의 트렌드를 파악하곤 합니다. 하지만 이러한 정보들은 대개 시각적인 요소에 집중되어 있어 실질적인 유흥 시설의 서비스 수준을 판단하기에는 다소 부족함이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0422.html">합정 클럽 룩북 비교와 마곡 가라오케 추천정보 분석</a>
+        <p class="post-item__summary">최근 합정 클럽 룩북 스타일을 선호하는 젊은 층이 늘어나면서 마곡 지역의 가라오케 역시 세련된 인테리어를 강조하고 있습니다. 하지만 화려한 외관 뒤에 숨겨진 실제 운영 방식에는 큰 차이가 존재합니다</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0423.html">합정 클럽 룩북 오류와 마곡 유흥 추천정보 예약 과정</a>
+        <p class="post-item__summary">많은 분이 합정 클럽 룩북에서 본 화려한 분위기에 매료되어 덜컥 예약을 진행하다가 실패를 경험하곤 합니다. 예약 과정에서 가장 흔히 발생하는 실수는 구체적인 확인 절차를 거치지 않고 방문 시간을 정</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0424.html">합정 클럽 룩북 참고한 합정 노래방 추천정보 및 시설점검</a>
+        <p class="post-item__summary">합정 클럽 룩북의 인기는 단순히 패션에 국한되지 않고 해당 지역 노래방 문화에까지 영향을 미치고 있습니다. 하지만 노래방 선택 시에는 인테리어보다 접근성과 위치의 편리함이 이용객에게 더 실질적인 영</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0425.html">합정 클럽 룩북 참고하여 방문하는 연남 클럽 추천정보 정리</a>
+        <p class="post-item__summary">주말 밤 친구들과 함께 어디를 갈지 고민하다가 합정 클럽 룩북 스타일을 참고해 옷을 갖춰 입고 연남동으로 발길을 돌리는 경우가 많습니다. 막상 도착하면 어디를 선택해야 할지 망설여지는데, 사람마다 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0426.html">합정 클럽 룩북 스타일 분석을 통한 합정 셔츠룸 추천정보 가이드</a>
+        <p class="post-item__summary">많은 이들이 합정 클럽 룩북 스타일을 단순히 화려한 파티 의상으로만 오해하곤 하지만, 실상 TPO에 맞는 적절한 복장은 공간의 성격에 따라 다르게 접근해야 합니다. 특히 셔츠룸을 방문할 때는 클럽과</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0427.html">합정 클럽 룩북 참고하여 확인하는 공덕 가라오케 추천정보 팁</a>
+        <p class="post-item__summary">쾌적한 환경에서 노래를 즐기기 위해서는 방음 시설의 수준, 음향 장비의 품질, 그리고 내부 청결 상태라는 세 가지 충족 조건이 무엇보다 중요합니다. 합정 클럽 룩북 스타일처럼 자신감 넘치는 복장으로</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0428.html">합정 클럽 룩북 패션 고민처럼 중요한 상수 마사지 추천정보 비교</a>
+        <p class="post-item__summary">일상의 피로를 풀기 위해 마사지 샵을 고민해 본 적이 있습니까. 합정 클럽 룩북 스타일을 완성하기 위해 옷을 고르는 것처럼, 내 몸을 맡길 장소를 선택하는 데에도 신중한 기준이 필요합니다. 수많은 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0429.html">합정 클럽 룩북 기반 망원 노래방 추천정보 확인 절차</a>
+        <p class="post-item__summary">합정 클럽 룩북 콘텐츠를 소비하는 독자층은 대개 세련된 야간 문화에 관심이 많습니다. 하지만 망원 일대에서 적절한 장소를 찾을 때는 시각적 정보보다 실제 검증된 데이터를 중시해야 합니다. 본인이 원</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/guide-001-1gol97u.html">클럽 해결 방법 총정리</a>
+        <p class="post-item__summary">아, 진짜... MK울트라는 CIA 비밀 프로젝트였다. 그 당시에는 음모론 팩트체크가 불가능했지만, 스노 Snowden은 NSA 내부고발자였고, 그의 USB에 담긴 원본과 언론 공개본 차이는 감정선</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-1.html">합정 클럽 룩북</a>
+        <p class="post-item__summary">합정 지역의 클럽 문화와 패션 트렌드는 밤의 분위기와 밀접하게 연결되어 있습니다. 이곳은 다양한 세대의 감성이 교차하는 곳으로, 독특한 스타일을 제안하며 많은 주목을 받고 있습니다. 룩북은 단순히 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/juice-2.html">합정 클럽 룩북 트렌드 안내</a>
+        <p class="post-item__summary">합정 지역의 클럽 문화는 최근 세련된 패션 스타일이 강조되는 방향으로 빠르게 변화하고 있습니다. 많은 유흥 공간이 단순한 음악과 음료를 넘어, 방문객의 의상과 분위기까지 고려한 종합적인 엔터테인먼트</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-1.html">합정 클럽 룩북 가이드</a>
+        <p class="post-item__summary">합정 지역의 클럽 문화는 독특한 패션 감각과 세련된 분위기가 어우러진 공간으로 알려져 있습니다. 이곳을 방문하거나 정보를 찾아보는 분들을 위해, 지역 특성에 맞는 의상 스타일과 분위기를 살펴보는 것</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-2.html">normal 2</a>
+        <p class="post-item__summary">합정 클럽 룩북은 합정 지역에서 운영되는 클럽의 의류와 패션을介绍하는 컨셉입니다. 합정 클럽 룩북을 통해 방문객들은 다양한 패션 스타일과 트렌드를 확인할 수 있습니다.</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/normal-3.html">합정 클럽 룩북</a>
+        <p class="post-item__summary">합정 일대 클럽 문화는 지역 고유의 분위기와 스타일이 어우러진 공간으로 알려졌습니다. 클럽에 방문할 때 고려해야 할 패션을 사전에 파악하면, 방문 전반의 흐름을 더 원활하게 이해하는 데 도움이 됩니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/qa-002-1gol97u.html">합정 클럽 룩북</a>
+        <p class="post-item__summary">합정 지역의 클럽 문화는 자유롭고 개성 넘치는 분위기가 특징입니다. 이곳을 방문할 때 어떤 옷을 입어야 할지 고민하는 분들을 위해 세련되면서도 활동성을 놓치지 않는 패션 가이드를 제시합니다. 합정의</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/t3link-002-1wmsdz4.html">합정 클럽 룩북</a>
+        <p class="post-item__summary">합정 지역은 독특한 개성을 가진 클럽들이 밀집하여 자유롭고 예술적인 분위기를 자아내는 곳입니다. 이곳의 클럽을 방문할 때는 장소의 성격에 어울리는 감각적인 복장을 선택하는 것이 중요합니다. 너무 과</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
